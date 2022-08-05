@@ -1,9 +1,11 @@
 const reducer = (state, action) => {
     switch (action.type) {
         case 'add':
-            return { count: state.count + 1 }
+            return { ...state, count: state.count + 1 }
         case 'subtract':
-            return { count: state.count - 1 }
+            return { ...state, count: state.count - 1 }
+        case 'addInput':
+            return { ...state, input: action.payload }
         default:
             return { count: state.count }
     }

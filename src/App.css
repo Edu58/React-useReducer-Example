@@ -13,6 +13,11 @@
   color: white;
 }
 
+.App-header  div input {
+  padding: .5rem;
+  font-size: 2rem;
+}
+
 .App-header button {
   padding: 1rem;
   border-radius: 10px;

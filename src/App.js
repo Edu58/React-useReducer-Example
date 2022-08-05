@@ -4,7 +4,7 @@ import reducer from './reducer';
 
 function App() {
 
-  const [state, dispatch] = useReducer(reducer, {count: 0})
+  const [state, dispatch] = useReducer(reducer, {count: 0, input: ''})
   // const [number, setNumber] = useState(0)
 
   // const add = () => {
@@ -19,6 +19,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className='counter'>
+
+          <div style={{marginBottom:'2rem'}}>
+            <input type='text' placeholder='enter any text' onChange={(e) => dispatch({type: 'addInput', payload: e.target.value})}></input>
+          </div>
+
+          <p>{state.input}</p>
 
           <button type='button' onClick={() => dispatch({ type: 'add' })}>+</button>
 
